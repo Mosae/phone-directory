@@ -1,54 +1,31 @@
-// function validateForm() {
-// 	const name = document.getElementById('name').value;
-// 	const number = document.getElementById('mobile');
-// 	const email = document.getElementById('email');
-// 	const error = document.getElementById('error');
-// 	const submit = document.getElementById('submit');
+let submit = document.getElementById('submit');
+submit.addEventListener('click', displayData);
 
-// 	submit.addEventListener('click', displayData);
+let row = 1;
 
-// 	if (name.value === '' || number.value === '' || email.value === '') {
-// 		error.style.display = 'block';
-// 		// name.focus();
-// 		return false;
-// 	} else {
-// 		addData();
-// 	}
+function displayData() {
+	let name = document.getElementById('name').value;
+	let number = document.getElementById('mobile').value;
+	let email = document.getElementById('email').value;
+	let error = document.getElementById('error');
 
-// function addInput(row) {
-// 	var row = '';
-// 	row +=
-// 		'<tr><td>' +
-// 		name +
-// 		'</td><td>' +
-// 		number +
-// 		'</td><td>' +
-// 		email +
-// 		'</td></tr>';
-// 	let tableRef = document
-// 		.getElementById('list')
-// 		.getElementsByTagName('tbody');
-// 	let newRow = tableRef.insertRow(tableRef.row.length);
-// }
+	if (!name || !number || !email) {
+		error.style.display = 'block';
+		return false;
+	}
+	let table = document.getElementById('list');
 
-// function addData() {
-// 	//logic to add info
-// 	let table = document.getElementById('list');
+	let rowCount = table.rows.length;
+	let row = table.insertRow(rowCount);
 
-// 	let rowCount = table.rows.length;
-// 	let row = table.insertRow(rowCount);
+	//DRY code look to make it cleaner
+	let cell1 = row.insertCell();
+	let cell2 = row.insertCell(1);
+	let cell3 = row.insertCell(2);
 
-// 	//DRY code look to make it cleaner
-// 	let firstCell = row.insertCell();
-// 	let secondCell = row.insertCell(1);
-// 	let thirdCell = row.insertCell(2);
+	cell1.innerHTML = name;
+	cell2.innerHTML = number;
+	cell3.innerHTML = email;
 
-// 	let firstEle = document.createElement('tr');
-// 	let secondEle = document.createElement('tr');
-// 	let thirdEle = document.createElement('tr');
-
-// 	firstCell.appendChild(firstEle);
-// 	secondCell.appendChild(secondEle);
-// 	thirdCell.appendChild(thirdEle);
-// }
-// }
+	row++;
+}
