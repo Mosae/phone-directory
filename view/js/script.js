@@ -13,13 +13,13 @@ function displayData() {
 		error.style.display = 'block';
 		return false;
 	}
+	//I could add an id to tbody to get it by id
 	let table = document.getElementById('list');
-
-	//let rowCount = table.rows.length;
 
 	let newRow = table.insertRow(row);
 
 	//DRY code look to make it cleaner
+
 	let cell1 = newRow.insertCell(0);
 	let cell2 = newRow.insertCell(1);
 	let cell3 = newRow.insertCell(2);
