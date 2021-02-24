@@ -29,4 +29,11 @@ function displayData() {
 	cell3.innerHTML = email;
 
 	row++;
+	resetInput();
+}
+
+function resetInput() {
+	document.getElementById('name').value = '';
+	document.getElementById('mobile').value = '';
+	document.getElementById('email').value = '';
 }
