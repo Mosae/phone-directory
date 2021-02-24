@@ -15,13 +15,14 @@ function displayData() {
 	}
 	let table = document.getElementById('list');
 
-	let rowCount = table.rows.length;
-	let row = table.insertRow(rowCount);
+	//let rowCount = table.rows.length;
+
+	let newRow = table.insertRow(row);
 
 	//DRY code look to make it cleaner
-	let cell1 = row.insertCell();
-	let cell2 = row.insertCell(1);
-	let cell3 = row.insertCell(2);
+	let cell1 = newRow.insertCell(0);
+	let cell2 = newRow.insertCell(1);
+	let cell3 = newRow.insertCell(2);
 
 	cell1.innerHTML = name;
 	cell2.innerHTML = number;
