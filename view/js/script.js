@@ -2,7 +2,6 @@ let submit = document.getElementById('submit');
 submit.addEventListener('click', displayData);
 
 let row = 1;
-
 function displayData() {
 	let name = document.getElementById('name').value;
 	let number = document.getElementById('mobile').value;
@@ -36,4 +35,32 @@ function resetInput() {
 	document.getElementById('name').value = '';
 	document.getElementById('mobile').value = '';
 	document.getElementById('email').value = '';
+}
+
+///sorting function
+function sortCol() {
+	let table, row, switching, i, x, y, shouldSwitch;
+	table = document.getElementById('summaryTable');
+	switching = true;
+
+	while (switching) {
+		switching = false;
+		rows = table.rows;
+
+		for (let i = 0; i < rows.length - 1; i++) {
+			shouldSwitch = false;
+
+			x = rows[i].getElementByTagName('TD')[0];
+			y = rows[i + 1].getElementByTagName('td')[0];
+
+			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+				shouldSwitch = true;
+				break;
+			}
+		}
+		if (shouldSwitch) {
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+		}
+	}
 }
