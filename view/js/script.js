@@ -39,7 +39,7 @@ function resetInput() {
 
 ///sorting function
 function sortCol() {
-	let table, row, switching, i, x, y, shouldSwitch;
+	let table, rows, switching, i, x, y, shouldSwitch;
 	table = document.getElementById('summaryTable');
 	switching = true;
 
@@ -49,9 +49,10 @@ function sortCol() {
 
 		for (let i = 0; i < rows.length - 1; i++) {
 			shouldSwitch = false;
-
-			x = rows[i].getElementByTagName('TD')[0];
-			y = rows[i + 1].getElementByTagName('td')[0];
+			x = rows[i].getElementByTagName('nameColumn');
+			console.log(rows[i]);
+			// x = rows[i].getElementByTagName('td')[0];
+			// y = rows[i + 1].getElementByTagName('td')[0];
 
 			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
 				shouldSwitch = true;
