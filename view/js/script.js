@@ -12,10 +12,18 @@ function displayData() {
 		error.style.display = 'block';
 		return false;
 	}
+	let style = document.createAttribute('style');
+	if (row % 2 !== 0) {
+		style.value = 'background-color: #bfbfbf';
+	} else {
+		style.value = 'background-color: white';
+	}
+
 	//I could add an id to tbody to get it by id
 	let table = document.getElementById('list');
 
 	let newRow = table.insertRow(row);
+	newRow.setAttributeNode(style);
 
 	//DRY code look to make it cleaner
 
@@ -28,6 +36,8 @@ function displayData() {
 	cell3.innerHTML = email;
 
 	row++;
+	//check if counter is odd or even then set a different background
+
 	resetInput();
 }
 
