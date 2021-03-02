@@ -8,4 +8,4 @@ These have to be sorted by name
 
 On error: Show invalid input message
 
-I will be using jquery
+For every odd row, add gray color

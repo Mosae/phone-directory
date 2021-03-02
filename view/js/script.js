@@ -47,12 +47,12 @@ function sortCol() {
 		switching = false;
 		rows = table.rows;
 
-		for (let i = 0; i < rows.length - 1; i++) {
+		for (let i = 1; i < rows.length - 1; i++) {
 			shouldSwitch = false;
-			x = rows[i].getElementByTagName('nameColumn');
-			console.log(rows[i]);
-			// x = rows[i].getElementByTagName('td')[0];
-			// y = rows[i + 1].getElementByTagName('td')[0];
+			// x = rows[i].getElementByTagName('nameColumn')[0];
+			x = rows[i].getElementByTagName('td')[0];
+			console.log(x);
+			y = rows[i + 1].getElementByTagName('td')[0];
 
 			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
 				shouldSwitch = true;
