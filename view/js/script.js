@@ -48,30 +48,44 @@ function resetInput() {
 }
 
 ///sorting function
-function sortCol() {
-	let table, rows, switching, i, x, y, shouldSwitch;
-	table = document.getElementById('summaryTable');
-	switching = true;
+// function sortCol() {
+// 	let table, rows, switching, i, x, y, shouldSwitch;
+// 	table = document.getElementById('summaryTable');
+// 	switching = true;
 
-	while (switching) {
-		switching = false;
-		rows = table.rows;
+// 	while (switching) {
+// 		switching = false;
+// 		rows = table.rows;
 
-		for (let i = 1; i < rows.length - 1; i++) {
-			shouldSwitch = false;
-			// x = rows[i].getElementByTagName('nameColumn')[0];
-			x = rows[i].getElementByTagName('td')[0];
-			console.log(x);
-			y = rows[i + 1].getElementByTagName('td')[0];
+// 		for (let i = 1; i < rows.length - 1; i++) {
+// 			shouldSwitch = false;
+// 			// x = rows[i].getElementByTagName('nameColumn')[0];
+// 			x = rows[i].getElementByTagName('td')[0];
+// 			console.log(x);
+// 			y = rows[i + 1].getElementByTagName('td')[0];
 
-			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-				shouldSwitch = true;
-				break;
-			}
-		}
-		if (shouldSwitch) {
-			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-			switching = true;
-		}
-	}
+// 			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+// 				shouldSwitch = true;
+// 				break;
+// 			}
+// 		}
+// 		if (shouldSwitch) {
+// 			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+// 			switching = true;
+// 		}
+// 	}
+// }
+
+function sortTableByCol(table, column, asc = true) {
+	const dirModifier = asc ? 1 : -1;
+	const tBody = table.tBodies[0];
+	const rows = Array.from(tBody.querySelectorAll('tr'));
+
+	// Sort each row
+	const sortedRows = rows.sort((a, b) => {
+		console.log(a);
+		console.log(b);
+	});
 }
+
+sortTableByCol(document.querySelector('table'), 1);
