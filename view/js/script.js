@@ -12,6 +12,7 @@ function displayData() {
 		error.style.display = 'block';
 		return false;
 	}
+
 	let style = document.createAttribute('style');
 	if (row % 2 !== 0) {
 		style.value = 'background-color: #bfbfbf';
@@ -24,8 +25,6 @@ function displayData() {
 
 	let newRow = table.insertRow(row);
 	newRow.setAttributeNode(style);
-
-	//DRY code look to make it cleaner
 
 	let cell1 = newRow.insertCell(0);
 	let cell2 = newRow.insertCell(1);
@@ -45,6 +44,7 @@ function resetInput() {
 	document.getElementById('name').value = '';
 	document.getElementById('mobile').value = '';
 	document.getElementById('email').value = '';
+	error.style.display = 'none';
 }
 
 ///sorting function

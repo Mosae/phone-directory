@@ -8,4 +8,8 @@ These have to be sorted by name
 
 On error: Show invalid input message
 
-For every odd row, add gray color
+For every odd row, add gray color - done
+
+Add tests
+
+reset error message after input
